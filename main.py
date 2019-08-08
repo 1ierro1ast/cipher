@@ -2,6 +2,7 @@ import sys, subprocess, hashlib, zlib, base64
 
 subprocess.call("cls", shell = True)
 
+
 def atbashCipher(word,alphabet):
 	res = []
 	result = ""
@@ -57,8 +58,10 @@ def caesarDecipher(word,key,alphabet):
 		result += res[p]
 	return result
 
+
 def inputData():
 	return input(splitter()+"\n| Choose language(EN,RU): ").lower(),(input("|| Word: ").lower()).replace(" ",""),input("|| Key: ")
+
 
 def splitter():
 	return "|==========================="
@@ -82,6 +85,7 @@ def chooseLang(chLang):
 			chLang = input(splitter()+"\n| Choose EN or RU only: ")
 	return lang
 
+
 def atbash():
 	chOper = input(splitter()+"\n| Choose operation:\n| 1.Crypt\n| 2.Decrypt\n| 3.Exit\n| >>> ")
 	data = inputData()
@@ -96,6 +100,7 @@ def atbash():
 		chOper = input(splitter()+"\n| Enter number:\n| 1.Crypt\n| 2.Decrypt\n| 3.Exit\n| >>> ")
 	return res
 
+
 def caesar():
 	chOper = input(splitter()+"\n| Choose operation:\n| 1.Crypt\n| 2.Decrypt\n| 3.Exit\n| >>> ")
 	data = inputData()
@@ -109,6 +114,7 @@ def caesar():
 	else:
 		chOper = input(splitter()+"\n| Enter number:\n| 1.Crypt\n| 2.Decrypt\n| 3.Exit\n| >>> ")
 	return res, data[2]
+
 
 def saveToFile(data):
 	with open('results.txt', 'a',encoding = "UTF-8") as file:
@@ -183,6 +189,7 @@ def mainMenu():
 			sys.exit()
 		else:
 			chMain = input(splitter()+"\n| Enter number: \n| 1.Hash\n| 2.Cipher\n| 3.Exit\n| >>> ")
+
 
 def main():
 	print(logo())

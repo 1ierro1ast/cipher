@@ -65,8 +65,10 @@ def genPassDict(filename,minSize,maxSize,sizeList):
 		saveToFile(word,filename)
 	return "success"
 
+
 def logo():
 	return splitter()+"\n|=========dictCombine==="
+
 
 def splitter():
 	return "\n|======================="
@@ -78,12 +80,14 @@ def inputDataBrute():
 	word = input("| Enter check word: ")
 	return passwordBase, word
 
+
 def inputDataHashBrute():
 	print(splitter())
 	passwordBase = input("| Enter password base name: ")
 	hash4Brute = input("| Enter hash for brute: ")
 	hashType = input("| Enter hash type for brute(md5,sha1,sha2,sha256,sha512): ")
 	return passwordBase, hash4Brute, hashType
+
 
 def inputDataGenDict():
 	print(splitter())
@@ -93,11 +97,13 @@ def inputDataGenDict():
 	sizeList = int(input("| Enter wordlist size: "))
 	return dictData, wordMinLen, wordMaxLen, sizeList
 
+
 def inputDataHashDict():
 	passwordBase = input("| Enter password base name: ")
 	filename = input("| Enter new filename for base: ")
 	hashType = input("| Enter hash type for brute(md5,sha1,sha2,sha256,sha512): ")
 	return passwordBase, filename, hashType
+
 
 def inputData():
 	dictData = input("| Enter dictionary name: ")
@@ -132,16 +138,6 @@ def main():
 	elif chMenu == "5":
 		sys.exit()
 
-
-
-
-#dict4Hash = input("Enter dictionary name: ")
-#filename = input("Enter new name: ")
-
-#word = "супер_сложный_пароль"
-#hashWord = hasher(hashType = "sha256", data = word)
-
-#print("Find hash: " + brute(openDict(hashData(hashType = "sha256",dataList = openDict(dict4Hash), filename = filename)), search = hashWord)+"\nWord: "+ word)
 
 if __name__ == "__main__":
 	sys.exit(main())
